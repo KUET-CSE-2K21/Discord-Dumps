@@ -1,0 +1,1089 @@
+{
+  "comment": "Exported from https://atlas.bot",
+  "formatVersion": 2,
+  "exportedAt": "2022-09-17T05:00:34.684Z",
+  "actions": [
+    {
+      "id": "7790036e-01dd-499f-9298-5cc03f9a6c60",
+      "flags": 0,
+      "name": "live report",
+      "trigger": {
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "type": 3,
+        "targetType": 3,
+        "name": "Report",
+        "channelId": null,
+        "afterVerification": null,
+        "roleId": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "keyword": null,
+        "emoji": null,
+        "description": null,
+        "parameters": [],
+        "voiceChannelId": null,
+        "contextChannelId": null
+      },
+      "disabled": false,
+      "content": "{responder.channel;1019780864256774204}\n{responder.text;{user.mention} reported {message.link}} \n{responder.embed;{{\n  \"title\": \"\",\n  \"color\": 16777215,\n  \"description\": \"\",\n  \"fields\": [\n    {\n      \"name\": \"Message by\",\n      \"value\": \"{user.nickname;{message.authorId}‎} `{message.authorId}`‎\",\n      \"inline\":true\n    },\n    {\n      \"name\": \"Message ID\",\n      \"value\": \"{message.id}‎\",\n      \"inline\":true\n    },{\n      \"name\": \"Message channel\",\n      \"value\": \"{channel.mention;{message.channelId}} `{message.channelId}`‎\",\n      \"inline\": true\n    },\n        {\n      \"name\": \"Sent at\",\n      \"value\": \"{message.createdAt}‎\",\n      \"inline\":true\n    },\n    {\n      \"name\": \"Message attachments\",\n      \"value\": \"{message.attachments}‎\",\n      \"inline\":true\n    },\n    {\n      \"name\": \"Message content\",\n      \"value\": \"{message.content}‎\"\n    }    \n  ]\n}}}\n{responder.send}\n{responder.ephemeral}\n{responder.text;Successfully reported.}",
+      "cooldownSeconds": 0,
+      "createdAt": "2022-09-15T01:25:27.627Z",
+      "updatedAt": "2022-09-15T02:07:49.237Z",
+      "task": null
+    },
+    {
+      "id": "6d850a70-c6c2-4712-89e1-4de1f2c95736",
+      "flags": 0,
+      "name": "notes",
+      "trigger": {
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "type": 0,
+        "targetType": null,
+        "name": "note",
+        "channelId": null,
+        "afterVerification": null,
+        "roleId": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "keyword": null,
+        "emoji": null,
+        "description": "Upload notes",
+        "parameters": [
+          {
+            "name": "course_of",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "course_no",
+            "type": 4,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "topic_name",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "sub_topic",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "keywords",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          }
+        ],
+        "voiceChannelId": null,
+        "contextChannelId": null
+      },
+      "disabled": false,
+      "content": "{=channel;1015794940481118239}\n{responder.channel;{$channel}}\n{responder.text;{option;course_of} {option;course_no} | {option;topic_name} -> {option;sub_topic} \n||{option;keywords}||\n}\n{=message;{responder.send return_id=true}}\n{responder.reset}\n{responder.ephemeral}\n{responder.text;Thread creation done. Now upload files in that thread}\n{responder.send}\n{=notf_id;{channel.startThread auto_archive_duration=one_week is_private=false return_id=true channel={$channel};{option;topic_name} -> {option;sub_topic};{$message}}}\n{sleep;1}",
+      "cooldownSeconds": 0,
+      "createdAt": "2022-09-15T00:06:12.713Z",
+      "updatedAt": "2022-09-15T01:19:13.116Z",
+      "task": null
+    },
+    {
+      "id": "efc355c7-72e5-41f5-9e2b-f68604d0897d",
+      "flags": 0,
+      "name": "Emergency",
+      "trigger": {
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "type": 0,
+        "targetType": null,
+        "name": "emegency_contact",
+        "channelId": null,
+        "afterVerification": null,
+        "roleId": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "keyword": null,
+        "emoji": null,
+        "description": "emegerncy contact information",
+        "parameters": [
+          {
+            "name": "emergency_contact_name",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "emergency_contact_relation",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "emergency_contact_phone",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "emergency_contact_location",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "blood_group",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "residence_in_khulna",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "permanent_address",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "local_guardian_name",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "local_guardian_phone",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "extra",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          }
+        ],
+        "voiceChannelId": null,
+        "contextChannelId": null
+      },
+      "disabled": false,
+      "content": "[#if;{if;{user.roles};includes;1019292387232714822;true;false}]\n    {responder.ephemeral}\n    {return;You have already submitted emergency contact info.}\n[/if]\n\n{responder.channel;1018187290385850428}\n{responder.text;{user.nickname}}\n{responder.embed;{{\n  \"color\": 16777215,\n  \"author\": {\n    \"name\": \"{user.name}\",\n    \"icon_url\": \"{user.avatar}\"\n  },\n  \"fields\": [\n    {\n      \"name\": \"E.C. Name\",\n      \"value\": \"{option;emergency_contact_name}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"E.C. Phone No.\",\n      \"value\": \"{option;emergency_contact_phone}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"E.C. Location\",\n      \"value\": \"{option;emergency_contact_location}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"E.C. Relation\",\n      \"value\": \"{option;emergency_contact_relation}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"Blood Group\",\n      \"value\": \"{option;blood_group}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"Residence in Khulna\",\n      \"value\": \"{option;residence_in_khulna}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"Permanent Address\",\n      \"value\": \"{option;permanent_address}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"Local gaurdian name\",\n      \"value\": \"{option;local_guardian_name}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"Local guardian phone no \",\n      \"value\": \"{option;local_guardian_phone}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"Extra Information\",\n      \"value\": \"{option;extra}‎\"\n    }\n  ]\n}}}\n{responder.send}\n{responder.ephemeral}\n{responder.text;done!}\n{responder.send}\n{user.addRole;1019292387232714822}\n\n\n/////\n{responder.text;{user.nickname}}\n{responder.embed;{{\n  \"color\": 16777215,\n  \"author\": {\n    \"name\": \"{user.name}\",\n    \"icon_url\": \"{user.avatar}\"\n  },\n  \"fields\": [\n    {\n      \"name\": \"E.C. Name\",\n      \"value\": \"{option;emergency_contact_name}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"E.C. Phone No.\",\n      \"value\": \"{option;emergency_contact_phone}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"E.C. Location\",\n      \"value\": \"{option;emergency_contact_location}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"E.C. Relation\",\n      \"value\": \"{option;emergency_contact_relation}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"Blood Group\",\n      \"value\": \"{option;blood_group}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"Residence in Khulna\",\n      \"value\": \"{option;residence_in_khulna}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"Permanent Address\",\n      \"value\": \"{option;permanent_address}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"Local gaurdian name\",\n      \"value\": \"{option;local_guardian_name}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"Local guardian phone no \",\n      \"value\": \"{option;local_guardian_phone}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"Extra Information\",\n      \"value\": \"{option;extra}‎\"\n    }\n  ]\n}}}\n{responder.dm;{user.id}}\n///\n{return;done!}",
+      "restriction": {
+        "permissions": "0",
+        "role": {
+          "mode": 1,
+          "value": [
+            "1015646657234358302"
+          ]
+        },
+        "channel": {
+          "mode": 1,
+          "value": [
+            "1015792020188569660",
+            "1018735793281450094"
+          ]
+        }
+      },
+      "cooldownSeconds": 0,
+      "createdAt": "2022-09-13T16:54:06.978Z",
+      "updatedAt": "2022-09-14T10:00:54.069Z",
+      "task": null
+    },
+    {
+      "id": "604a9d04-3bf3-43db-8a4b-91defc4d3b0e",
+      "flags": 0,
+      "name": "Update Contact",
+      "trigger": {
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "type": 0,
+        "targetType": null,
+        "name": "update_contact",
+        "channelId": null,
+        "afterVerification": null,
+        "roleId": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "keyword": null,
+        "emoji": null,
+        "description": "update contact",
+        "parameters": [
+          {
+            "name": "msg_id",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "field",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "value",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          }
+        ],
+        "voiceChannelId": null,
+        "contextChannelId": null
+      },
+      "disabled": false,
+      "content": "{=channel;1018158265374343208}\n//[#if;{if;{user.roles};!includes;1018840811108044820;true;false}]\n//    {return;Create a contact card before updating}\n//[/if]\n{=field;{option;field}}\n{=fieldl;{casing mode=\"lower\";{option;field}}}\n{=value;{option;value}}\n{=valuel;{casing mode=\"lower\";{option;value}}}\n{=embed;{message.embed index=0;{$channel}-{option;msg_id}}}\n{=footer_data;{split;{$embed.footer.text};:}}\n{=user_created;{$footer_data.1}}\n[#if;{$valuel};==;x]\n    [if;{$fieldl};==;\"email\"]\n        {return;You can't remove your email address}\n    [/if]\n[/if]\n[#if;{$user_created};!=;{user.id}]\n    {return;You can only edit your own message}\n[/if]\n[#if;{length;{$embed.fields}};>;24]\n    {return;Reached maximum number of fields}\n[/if]\n[#if;{$fieldl};==;email]\n    {=embed.description;{$valuel}}\n[/if]\n{responder.embed;{{\n  \"title\": \"{user.nickname}\",\n  \"color\": 16777215,\n  \"description\": \"{$embed.description}\",\n  \"footer\": {\n      \"text\":\"{$embed.footer.text}\"\n  },\n  \"thumbnail\": {\n    \"url\": \"{user.avatar}\"\n  },\n  \"author\": {\n    \"name\": \"{user.name}\",\n    \"icon_url\": \"{user.avatar}\"\n  },\n  \"fields\":[]\n}}}\n\n{=state;0}\n\n[#if;{length;{$embed.fields}};!=;0]\n    [#for;{=original_field};{$embed.fields}]\n        [#if;{casing mode=\"lower\";{$original_field.name}};==;{$fieldl}]\n            {=state;1}\n            //deletes field if value x\n            [#if;{$valuel};!=;x] \n                {responder.embedField name={$original_field.name} value=\"[{$value}]({$value})\" inline=true}\n            [/if]\n        [/if]\n        [#if;{casing mode=\"lower\";{$original_field.name}};!=;{$fieldl}]\n            {responder.embedField name={$original_field.name} value={$original_field.value} inline=true}\n        [/if]\n    [/for]\n[/if]\n[#if;{$valuel};!=;x]\n    [#if;{$state};==;0]\n        [#if;{$fieldl};!=;email]\n            {responder.embedField name={casing mode=\"title\";{$field}} value=\"[{$value}]({$value})\" inline=true}\n        [/if]\n    [/if]\n[/if]\n\n//{responder.edit ;1018735793281450094-{option;msg_id}}\n{responder.channel;{$channel}}\n{=msgid;{responder.send return_id=true}}\n\n{responder.channel;{$channel}}\n{responder.text;||Message ID : `{$msgid}`||}\n{responder.edit;{$channel}-{$msgid}}\n{responder.send}\n{message.delete;{$channel}-{option;msg_id}}\n{responder.ephemeral}\n{responder.text;Contact Updated. Message ID : `{$msgid}`.\nUpdate command \n`/update_contact msg_id:{$msgid} field: value:`\n}\n{responder.dm fallback=false;{user.id}}\n{responder.send}\n{responder.ephemeral}\n{return;Contact Updated. Message ID : `{$msgid}`.\nUpdate command:\n`/update_contact msg_id:{$msgid} field: value:`\nPlease copy and save this text.\n}",
+      "restriction": {
+        "permissions": "0",
+        "role": {
+          "mode": 1,
+          "value": [
+            "1015646657234358302"
+          ]
+        },
+        "channel": {
+          "mode": 1,
+          "value": [
+            "1015792020188569660",
+            "1018735793281450094"
+          ]
+        }
+      },
+      "cooldownSeconds": 0,
+      "createdAt": "2022-09-12T13:30:39.255Z",
+      "updatedAt": "2022-09-14T09:47:03.376Z",
+      "task": null
+    },
+    {
+      "id": "115f253e-d3e5-469b-90bb-6410ad2f7cdc",
+      "flags": 0,
+      "name": "Student Contact",
+      "trigger": {
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "type": 0,
+        "targetType": null,
+        "name": "contact",
+        "channelId": null,
+        "afterVerification": null,
+        "roleId": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "keyword": null,
+        "emoji": null,
+        "description": "Student Contact",
+        "parameters": [
+          {
+            "name": "email",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "1",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "2",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "3",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "4",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "5",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "6",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "7",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "8",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "9",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "10",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "11",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "12",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "13",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "14",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "15",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "16",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "17",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "18",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "19",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "20",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "21",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "22",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "23",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "24",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          }
+        ],
+        "voiceChannelId": null,
+        "contextChannelId": null
+      },
+      "disabled": false,
+      "content": "{=channel;1018158265374343208}\n[#if;{if;{user.roles};!includes;1015646657234358302;true;false}]\n    {responder.ephemeral}\n    {return;You must have the family role to use this command}\n[/if]\n[#if;{if;{user.roles};includes;1018840811108044820;true;false}]\n    {responder.ephemeral}\n    {return;You have already submitted your contact info.Please update using the /update_contact slash command}\n[/if]\n\n{responder.channel;{$channel}}\n{responder.embed;{{\n  \"title\": \"{user.nickname}\",\n  \"color\": 16777215,\n  \"description\": \"{option;email}\",\n  \"thumbnail\": {\n    \"url\": \"{user.avatar}\"\n  },\n  \"footer\": {\n\"text\": \"User ID :{user.id}\"\n},\n  \"author\": {\n    \"name\": \"{user.name}\",\n    \"icon_url\": \"{user.avatar}\"\n  },\n  \"fields\":[\n  ]\n}}}\n{=array;{[1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23;24]}}\n[#for;{=item};{$array}]\n    [#if;{option;{$item}}]\n      {=data;{split;{option;{$item}};,}}\n      {if;{$data.0};==;;{responder.reset}{responder.ephemeral}{return;Invalid parameter(empty field)};}\n      {if;{$data.1};==;;{responder.reset}{responder.ephemeral}{return;Invalid parameter(empty value);}}\n  {responder.embedField name={casing mode=\"title\";{$data.0}} value=\"[{$data.1}]({$data.1})\" inline=true;}\n    [/if]\n[/for]\n{=msgid;{responder.send return_id=true}}\n{responder.channel;{$channel}}\n{responder.text;||Message ID : `{$msgid}`||}\n{responder.edit;{$channel}-{$msgid}}\n{responder.send}\n{user.addRole;1018840811108044820}\n{responder.ephemeral}\n{responder.text;Contact Created. Message ID : `{$msgid}`.\nUpdate command `/update_contact msg_id:{$msgid} field: value:`}\n{responder.dm fallback=false;{user.id}}\n{responder.send}\n{responder.ephemeral}\n{return;Contact Created. Message ID : `{$msgid}`.\nUpdate command ||`/update_contact msg_id:{$msgid} field: value:`||\nPlease copy and save this text.\n}",
+      "restriction": {
+        "permissions": "0",
+        "role": {
+          "mode": 1,
+          "value": [
+            "1015646657234358302"
+          ]
+        },
+        "channel": {
+          "mode": 1,
+          "value": [
+            "1015792020188569660",
+            "1018735793281450094"
+          ]
+        }
+      },
+      "cooldownSeconds": 0,
+      "createdAt": "2022-09-10T15:25:07.231Z",
+      "updatedAt": "2022-09-14T09:52:49.464Z",
+      "task": null
+    },
+    {
+      "id": "27b7991e-d2fe-4a2a-bb4a-d4de510c5e29",
+      "flags": 0,
+      "name": "Create Contact",
+      "trigger": {
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "type": 0,
+        "targetType": null,
+        "name": "teacher_contact",
+        "channelId": null,
+        "afterVerification": null,
+        "roleId": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "keyword": null,
+        "emoji": null,
+        "description": "A very cool and useful custom command",
+        "parameters": [
+          {
+            "name": "name",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "designation",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "image",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "url",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "contact_no",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "ins_email",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "email",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "email2",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "ext",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "whatsapp",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          },
+          {
+            "name": "facebook",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": false
+          }
+        ],
+        "voiceChannelId": null,
+        "contextChannelId": null
+      },
+      "disabled": false,
+      "content": "{responder.embed;{{\n  \"title\": \"{option;name}\",\n  \"url\": \"{option;url}\",\n  \"color\": 16777215,\n  \"description\": \"\\n\",\n  \"thumbnail\": {\n    \"url\": \"{option;image}\"\n  },\n  \"author\": {\n    \"name\": \"{server.name}\",\n    \"icon_url\": \"{server.icon}\"\n  },\n  \"fields\": [\n    {\n      \"name\": \"Designation\",\n      \"value\": \"{option;designation}\",\n      \"inline\": false\n    }\n  ]\n}}}\n{if;{or;{option;contact_no};none};!=;none;{responder.embedField name=\"Contact No.\" value={option;contact_no} inline=true}}\n{if;{or;{option;ins_email};none};!=;none;{responder.embedField name=\"Email (KUET)\" value=\"[{option;ins_email}](mailto:{option;ins_email})\" inline=true}}\n{if;{or;{option;email};none};!=;none;{responder.embedField name=\"Email\" value=\"[{option;email}](mailto:{option;email})\" inline=true}}\n{if;{or;{option;email2};none};!=;none;{responder.embedField name=\"Email\" value=\"[{option;email2}](mailto:{option;email2})\" inline=true}}\n{if;{or;{option;ext};none};!=;none;{responder.embedField name=\"Ext\" value={option;ext} inline=true}}\n{if;{or;{option;facebook};none};!=;none;{responder.embedField name=\"Facebook\" value=\"[Facebook]({option;facebook})\" inline=true}}\n{if;{or;{option;whatsapp};none};!=;none;{responder.embedField name=\"whatsapp\" value={option;whatsapp} inline=true}}",
+      "restriction": {
+        "permissions": "0",
+        "role": {
+          "mode": 1,
+          "value": [
+            "1013838270221787268"
+          ]
+        },
+        "channel": {
+          "mode": 0,
+          "value": []
+        }
+      },
+      "cooldownSeconds": 0,
+      "createdAt": "2022-09-10T12:52:34.429Z",
+      "updatedAt": "2022-09-10T15:25:04.371Z",
+      "task": null
+    },
+    {
+      "id": "23e1029e-26d9-4f93-900a-f50b23028006",
+      "flags": 0,
+      "name": "Update Info",
+      "trigger": {
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "type": 0,
+        "targetType": null,
+        "name": "update_info",
+        "channelId": null,
+        "afterVerification": null,
+        "roleId": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "keyword": null,
+        "emoji": null,
+        "description": null,
+        "parameters": [
+          {
+            "name": "user",
+            "type": 6,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "full_name",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "merit_position",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          }
+        ],
+        "voiceChannelId": null,
+        "contextChannelId": null
+      },
+      "disabled": false,
+      "content": "{store.set;user.{user.id;{option;user}}.name;{option;full_name}}\n{store.set;user.{user.id;{option;user}}.merit;{option;merit_position}}\n\n{responder.text;{user.mention;{option;user}}'s information has been updated}\n{responder.send}\n{user.edit nick={store.get;user.{user.id;{option;user}}.name};{option;user}}\n{responder.channel;1015791872775553125}\n{responder.text;{user.mention;{option;user}} has been re-verified by {user.mention}}\n{responder.send}\n",
+      "restriction": {
+        "permissions": "0",
+        "role": {
+          "mode": 1,
+          "value": [
+            "1015650670679949333"
+          ]
+        },
+        "channel": {
+          "mode": 0,
+          "value": []
+        }
+      },
+      "cooldownSeconds": 0,
+      "createdAt": "2022-09-10T03:00:08.232Z",
+      "updatedAt": "2022-09-10T03:18:36.859Z",
+      "task": null
+    },
+    {
+      "id": "cc1372ee-ffdb-4d78-ba08-d0035bca9868",
+      "flags": 0,
+      "name": "Introduce assisted",
+      "trigger": {
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "type": 0,
+        "targetType": null,
+        "name": "introduction_assisted",
+        "channelId": null,
+        "afterVerification": null,
+        "roleId": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "keyword": null,
+        "emoji": null,
+        "description": "A very cool and useful custom command",
+        "parameters": [
+          {
+            "name": "user",
+            "type": 6,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "full_name",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "merit_position",
+            "type": 4,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "where_did_you_find_the_inv_link",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          }
+        ],
+        "voiceChannelId": null,
+        "contextChannelId": null
+      },
+      "disabled": false,
+      "content": "{store.set;user.{user.id;{option;user}}.name;{option;full_name}}\n{store.set;user.{user.id;{option;user}}.merit;{option;merit_position}}\n{responder.embed;{{\n  \"title\": \"Assisted Introduction\",\n  \"color\": 16777215,\n  \"description\": \"Provided details\",\n  \"author\": {\n    \"name\": \"{user.username;{option;user}}\",\n    \"icon_url\": \"{user.avatar;{option;user}}\"\n  },\n  \"fields\": [\n    {\n      \"name\": \"Name\",\n      \"value\": \"{option;full_name}\",\n      \"inline\": false\n    },\n    {\n      \"name\": \"Merit/Roll\",\n      \"value\": \"{option;merit_position}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"Where did you find the invitation link?\",\n      \"value\": \"{option;where_did_you_find_the_inv_link}\",\n      \"inline\": true\n    }\n  ]\n}}}\n",
+      "restriction": {
+        "permissions": "0",
+        "role": {
+          "mode": 1,
+          "value": [
+            "1015650670679949333"
+          ]
+        },
+        "channel": {
+          "mode": 0,
+          "value": []
+        }
+      },
+      "cooldownSeconds": 0,
+      "createdAt": "2022-09-09T10:29:05.493Z",
+      "updatedAt": "2022-09-09T13:46:53.809Z",
+      "task": null
+    },
+    {
+      "id": "69c764cc-0a2b-40ca-b566-575d7abb2c2d",
+      "flags": 0,
+      "name": "View information",
+      "trigger": {
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "type": 0,
+        "targetType": null,
+        "name": "whois",
+        "channelId": null,
+        "afterVerification": null,
+        "roleId": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "keyword": null,
+        "emoji": null,
+        "description": "prints user information",
+        "parameters": [
+          {
+            "name": "user",
+            "type": 6,
+            "description": "A very mysterious option",
+            "required": true
+          }
+        ],
+        "voiceChannelId": null,
+        "contextChannelId": null
+      },
+      "disabled": false,
+      "content": "{responder.embed;{{\n  \"title\": \"{user.username;{option;user}}#{user.discriminator;{option;user}}\",\n  \"color\": 16777215,\n  \"description\": \"\\n\",\n  \"thumbnail\": {\n    \"url\": \"{user.avatar;{option;user}}\"\n  },\n  \"fields\": [\n    {\n      \"name\": \"Name\",\n      \"value\": \"{store.get;user.{user.id;{option;user}}.name}‎ \"\n    },\n    {\n      \"name\": \"Merit/Roll\",\n      \"value\": \"{store.get;user.{user.id;{option;user}}.merit}‎ \",\n      \"inline\": true\n    },\n    {\n      \"name\": \"Joined at\",\n      \"value\": \"{time format=F;{user.joinedAt;{option;user}}}\",\n      \"inline\": true\n    },\n    {\n      \"name\": \"Created at\",\n      \"value\": \"{time format=F;{user.createdAt;{option;user}}}\",\n      \"inline\": true\n    }\n  ]\n}}}\n{=data;[#for;{=item};{user.roles;{option;user}}]{role.mention;{$item}}[/for]}\n{responder.embedField name=\"Roles\" inline=false value={$data}}\n{=avatarurl;[Click here]({user.avatar;{option;user}})}\n{responder.embedField name=\"Avatar\" inline=true value={$avatarurl}}\n[#if;{user.bot;{option;user}}]\n\n    {responder.embedField name=\"Bot\" inline=true value=\"🤖\"}\n[/if]\n{if;{user.roles;{option;user}};!includes;1015646657234358302;\n{if;{user.roles;{option;user}};includes;1015646619158446101;{responder.embedField name=\"Verification\" inline=true value=\"🔃\"};{responder.embedField name=\"Verification\" inline=true value=\"❌\"}}}\n{if;{user.roles;{option;user}};includes;1015646657234358302;{responder.embedField name=\"Verification\" inline=true value=\"✅\"}}\n",
+      "restriction": {
+        "permissions": "0",
+        "role": {
+          "mode": 0,
+          "value": []
+        },
+        "channel": {
+          "mode": 1,
+          "value": [
+            "1015792020188569660",
+            "1015651093126066228",
+            "1018735793281450094"
+          ]
+        }
+      },
+      "cooldownSeconds": 0,
+      "createdAt": "2022-09-09T03:11:05.296Z",
+      "updatedAt": "2022-09-12T04:14:00.423Z",
+      "task": null
+    },
+    {
+      "id": "b9fa9e15-ba2f-4511-9964-9037bf1f5402",
+      "flags": 0,
+      "name": "edit desc",
+      "trigger": {
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "type": 0,
+        "targetType": null,
+        "name": "edit_desc",
+        "channelId": null,
+        "afterVerification": null,
+        "roleId": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "keyword": null,
+        "emoji": null,
+        "description": "edit message",
+        "parameters": [
+          {
+            "name": "msg_id",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          }
+        ],
+        "voiceChannelId": null,
+        "contextChannelId": null
+      },
+      "disabled": false,
+      "content": "{=embed;{message.embed;{option;msg_id}}}\n{=embed.description;\n* We follow discord TOS https://discord.com/terms\n\n* No harassment of other members. We are an inclusive community, any sort of hate speech or harassment is never allowed. All conversations should remain civil.\n\n* No inappropriate content. This includes, but is not limited to, illegal or adult content.\n\n* No sensitive topics. Talking about serious topics such as politics and religions is not appropriate for this community.\n\n* Don’t be disruptive. Please do not spam, this includes pinging users unnecessarily. Use the appropriate channel and server.\n\n* Don’t use inappropriate language. Remain respectful, do not circumvent our filters - they are there for a reason.\n\n* No discriminatory jokes and language, hate speech (which calls out a group by their age, race, gender), etc.\n\n* No verbal abuse, insults, or threats towards others.\n\n* No trolling\n\n* No criminal solicitation \n\n* It is strictly forbidden to ask about any personal information.Do not publish or share personal information without one's consent, in and out of Discord. This includes posting screenshots and videos on other social media sites.\n\n* Keep in mind that you are talking to a true person not a chatbot devoid of emotions,feelings,pride, personal space, and its own ideal\n\n*  No bypassing of any kind. Intentionally bypassing our filter is not allowed. Do not attempt to bypass moderation actions. Moderation decisions are final. Alternative accounts are not allowed.\n\n* No advertising or self-promotion.\n\n* No impersonation\n\n* Think before you write. Written texts are not reversible, edited/deleted texts are kept in logs.\n\n* Moderators hold the final say. Listen to and respect the volunteers \nthat keep this server running.\n\n}\n{responder.embed;{$embed}}\n{responder.edit;{option;msg_id}}",
+      "restriction": {
+        "permissions": "0",
+        "role": {
+          "mode": 1,
+          "value": [
+            "1013838270221787268"
+          ]
+        },
+        "channel": {
+          "mode": 0,
+          "value": []
+        }
+      },
+      "cooldownSeconds": 0,
+      "createdAt": "2022-09-06T16:02:59.058Z",
+      "updatedAt": "2022-09-08T13:40:52.684Z",
+      "task": null
+    },
+    {
+      "id": "61505146-bbf6-4d09-bc2b-9b1793c824cd",
+      "flags": 0,
+      "name": "Free",
+      "trigger": {
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "type": 0,
+        "targetType": null,
+        "name": "free",
+        "channelId": null,
+        "afterVerification": null,
+        "roleId": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "keyword": null,
+        "emoji": null,
+        "description": "free a user from jail",
+        "parameters": [
+          {
+            "name": "user",
+            "type": 6,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "reason",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          }
+        ],
+        "voiceChannelId": null,
+        "contextChannelId": null
+      },
+      "disabled": false,
+      "content": "{user.removeRole;1015661325898231860;{option;user}}\n{user.addRole free;1015646657234358302;{option;user}}\n{responder.channel;1015654004753186826}\n{responder.text;{user.mention} has freed {user.mention;{option;user}} for {option;reason}}\n{responder.send}\n{responder.text;{user.mention} has freed {user.mention;{option;user}} for {option;reason}}",
+      "restriction": {
+        "permissions": "0",
+        "role": {
+          "mode": 1,
+          "value": [
+            "1013838270221787268"
+          ]
+        },
+        "channel": {
+          "mode": 0,
+          "value": []
+        }
+      },
+      "cooldownSeconds": 0,
+      "createdAt": "2022-09-03T16:43:29.080Z",
+      "updatedAt": "2022-09-05T19:22:04.030Z",
+      "task": null
+    },
+    {
+      "id": "e7c4062d-16d6-40e5-b9e7-8e5b791fbe2f",
+      "flags": 0,
+      "name": "Jail",
+      "trigger": {
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "type": 0,
+        "targetType": null,
+        "name": "jail",
+        "channelId": null,
+        "afterVerification": null,
+        "roleId": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "keyword": null,
+        "emoji": null,
+        "description": "Jails a user",
+        "parameters": [
+          {
+            "name": "user",
+            "type": 6,
+            "description": "A very mysterious option",
+            "required": true
+          },
+          {
+            "name": "reason",
+            "type": 3,
+            "description": "A very mysterious option",
+            "required": true
+          }
+        ],
+        "voiceChannelId": null,
+        "contextChannelId": null
+      },
+      "disabled": false,
+      "content": "{user.removeRole jail;1015646657234358302;{option;user}}\n{user.addRole;1015661325898231860;{option;user}}\n{responder.channel;1015654004753186826}\n{responder.text;{user.mention} has jailed {user.mention;{option;user}} for {option;reason}}\n{responder.send}\n{responder.text;{user.mention} has jailed {user.mention;{option;user}} for {option;reason} , {user.mention} remove the roles manually}\n\n//{user.removeRole;1015646650984845432;{option;user}} //contest\n//{user.removeRole;1015650047666442260;{option;user}} //research\n//{user.removeRole;1015650084400148561;{option;user}} //project\n//{user.removeRole;1015660720182005851;{option;user}} //bots\n//{user.removeRole;1015650403859320895;{option;user}} //gaming\n//{user.removeRole;1015650435585015820;{option;user}} //movies and anime\n//{user.removeRole;1015650534079864852;{option;user}} //group study\n//{user.removeRole;1015650584826740796} //events\n//{user.removeRole;1015660878986752080;{option;user}} //cafeteria\n//{user.removeRole;1015650751185424416;{option;user}} //report access",
+      "restriction": {
+        "permissions": "0",
+        "role": {
+          "mode": 1,
+          "value": [
+            "1013838270221787268"
+          ]
+        },
+        "channel": {
+          "mode": 0,
+          "value": []
+        }
+      },
+      "cooldownSeconds": 0,
+      "createdAt": "2022-09-03T16:35:14.347Z",
+      "updatedAt": "2022-09-07T05:45:42.272Z",
+      "task": null
+    },
+    {
+      "id": "d6bf3582-dd65-46e3-b944-fdbc29401e04",
+      "flags": 0,
+      "name": "No longer on family",
+      "trigger": {
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "type": 11,
+        "targetType": null,
+        "name": "my_command",
+        "channelId": null,
+        "afterVerification": null,
+        "roleId": "1015646657234358302",
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "keyword": null,
+        "emoji": null,
+        "description": null,
+        "parameters": [],
+        "voiceChannelId": null,
+        "contextChannelId": null
+      },
+      "disabled": false,
+      "content": "{responder.text;{user.mention}}\n{responder.text}\n{user.removeRole;1015646650984845432} //contest\n{user.removeRole;1015650047666442260} //research\n{sleep;3}\n{user.removeRole;1015650084400148561} //project\n{user.removeRole;1015660720182005851} //bots\n{sleep;3}\n{user.removeRole;1015650403859320895} //gaming\n{user.removeRole;1015650435585015820} //movies and anime\n{sleep;3}\n{user.removeRole;1015650534079864852} //group study\n{user.removeRole;1015650584826740796} //events\n{sleep;3}\n{user.removeRole;1015660878986752080} //cafeteria\n{user.removeRole;1015650751185424416} //report access\n{sleep;2}",
+      "cooldownSeconds": 0,
+      "createdAt": "2022-09-03T16:31:08.440Z",
+      "updatedAt": "2022-09-07T05:28:08.911Z",
+      "task": null
+    },
+    {
+      "id": "4df9810c-d118-4edd-bb49-366b431a5f91",
+      "flags": 0,
+      "name": "Rule unchecked",
+      "trigger": {
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "type": 6,
+        "targetType": null,
+        "name": "my_command",
+        "channelId": null,
+        "afterVerification": null,
+        "roleId": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "keyword": null,
+        "emoji": "✅",
+        "description": null,
+        "parameters": [],
+        "voiceChannelId": null,
+        "contextChannelId": null
+      },
+      "disabled": false,
+      "content": "{user.removeRole;1015646657234358302}\n{user.addRole;1015646619158446101}",
+      "restriction": {
+        "permissions": "0",
+        "role": {
+          "mode": 0,
+          "value": []
+        },
+        "channel": {
+          "mode": 1,
+          "value": [
+            "1015656450003062815"
+          ]
+        }
+      },
+      "cooldownSeconds": 0,
+      "createdAt": "2022-09-03T16:30:23.302Z",
+      "updatedAt": "2022-09-12T03:28:48.577Z",
+      "task": null
+    },
+    {
+      "id": "0f8a0979-b7ff-4c5f-acc0-81d43def477a",
+      "flags": 0,
+      "name": "Rule accepted",
+      "trigger": {
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "type": 5,
+        "targetType": null,
+        "name": "my_command",
+        "channelId": null,
+        "afterVerification": null,
+        "roleId": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "keyword": null,
+        "emoji": "✅",
+        "description": null,
+        "parameters": [],
+        "voiceChannelId": null,
+        "contextChannelId": null
+      },
+      "disabled": false,
+      "content": "{user.addRole;1015646657234358302}\n{user.removeRole;1015646619158446101}\n{responder.channel;1015791872775553125}\n{responder.text;{user.mention} has accpeted the rules}\n{responder.send}\n{responder.text;\n----------------------------------------------------\n\n**You have successfully joined the main arena**\n\noptional choices : {channel.mention;1015664329217032303}\n\nPlease Follow this video! \n\nhttps://cdn.discordapp.com/attachments/1019573264638554132/1019573323505618995/optional.mp4\n}\n{responder.dm;{user.id}}",
+      "restriction": {
+        "permissions": "0",
+        "role": {
+          "mode": 0,
+          "value": []
+        },
+        "channel": {
+          "mode": 1,
+          "value": [
+            "1015656450003062815"
+          ]
+        }
+      },
+      "cooldownSeconds": 0,
+      "createdAt": "2022-09-03T16:28:19.571Z",
+      "updatedAt": "2022-09-17T01:47:31.107Z",
+      "task": null
+    },
+    {
+      "id": "47d903a0-0c26-45be-880f-5a1e8fe27e0a",
+      "flags": 0,
+      "name": "Verification",
+      "trigger": {
+        "handlerName": null,
+        "editOriginal": null,
+        "disableComponent": null,
+        "type": 0,
+        "targetType": 2,
+        "name": "verify",
+        "channelId": null,
+        "afterVerification": null,
+        "roleId": null,
+        "schedule": null,
+        "gracePeriodMinutes": null,
+        "keyword": null,
+        "emoji": null,
+        "description": "verification",
+        "parameters": [
+          {
+            "name": "user",
+            "type": 6,
+            "description": "A very mysterious option",
+            "required": true
+          }
+        ],
+        "voiceChannelId": null,
+        "contextChannelId": null
+      },
+      "disabled": false,
+      "content": "[#if;{if;{user.roles};!includes;1015646569279782992;true;false}]\n    {responder.ephemeral}\n    {return;What are you doink bro?}\n[/if]\n[#if;{if;{store.get;user.{user.id;{option;user}}.name};==;;true;false}]\n    {responder.ephemeral}\n    {return;User hasn't introduced yet! (Name)}\n[/if]\n[#if;{if;{store.get;user.{user.id;{option;user}}.merit};==;;true;false}]\n    {responder.ephemeral}\n    {return;User hasn't introduced yet! (Merit) }\n[/if]\n{user.edit nick={store.get;user.{user.id;{option;user}}.name};{option;user}}\n{user.addrole;1015646619158446101;{option;user}}\n{responder.text;{user.mention;{option;user}} Accept the {channel.mention;1015656450003062815}}\n{responder.send}\n{responder.channel;1015791872775553125}\n{responder.text;{user.mention;{option;user}} has been verified by {user.mention}}\n{responder.send}\n{responder.text;\n---------------------------------------------------\n\n**Your request has been verified**\n\nAccept the {channel.mention;1015656450003062815} to join the main arena.\n\nhttps://cdn.discordapp.com/attachments/1019573264638554132/1019588148780613693/Rules.mp4\n\n}\n{responder.dm;{user.id;{option;user}}}\n\n{sleep;3}\n{user.removeRole;1015646569279782992;{option;user}}\n",
+      "restriction": {
+        "permissions": "0",
+        "role": {
+          "mode": 1,
+          "value": [
+            "1015650670679949333"
+          ]
+        },
+        "channel": {
+          "mode": 1,
+          "value": [
+            "1015651093126066228"
+          ]
+        }
+      },
+      "cooldownSeconds": 0,
+      "createdAt": "2022-09-03T16:02:54.636Z",
+      "updatedAt": "2022-09-17T03:24:22.094Z",
+      "task": null
+    }
+  ]
+}

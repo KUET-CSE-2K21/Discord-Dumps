@@ -1,0 +1,9 @@
+{responder.embed;{{
+  "title": "Select areas you want access to.",
+  "color": 16777215,
+  "description": "🥼  Research\n🏅  Contest Programming\n💡  Projects\n🗒️  Notes\n🧿  Group Study\n⚽  Sports\n🎮  Gaming\n🎥  Movie and Anime\n☕  Cafeteria\n🤖  Bots\n🗄️  Report and Help\n🗣️  Announcements\n\nPings\n\n🇪  Events\n🇨 Contest Reminder\n🇳  Notices\n🇸  Server Updates\n",
+  "author": {
+    "name": "{server.name}",
+    "icon_url": "{server.icon;128}"
+  }
+}}}
